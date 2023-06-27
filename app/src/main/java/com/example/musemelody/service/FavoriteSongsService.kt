@@ -1,0 +1,37 @@
+package com.example.musemelody.service
+
+import android.content.Context
+import com.example.musemelody.model.media.SongModel
+import com.example.musemelody.model.media.valueObject.SongId
+import com.example.musemelody.repository.media.SongRepository
+import com.example.musemelody.repository.realm.FavoriteSongRepository
+
+class FavoriteSongsService(val context: Context, private val favoriteSongRepository: FavoriteSongRepository = FavoriteSongRepository()) {
+    fun findAll(): List<SongModel> {
+        val songIds = favoriteSongRepository.findAll()
+        val songRepository = SongRepository(context)
+        val songs = songRepository.findByIds(songIds)
+
+        if (!validation(songIds, songs)) {
+            fix(songIds, songs)
+
+            return findAll()
+        }
+
+        return songIds.mapNotNull { id ->
+            songs.find { it.songId == id }
+        }
+    }
+
+    private fun validation(songIds: List<SongId>, songs: List<SongModel>): Boolean {
+        return songIds.count() == songs.count()
+    }
+
+    private fun fix(songIds: List<SongId>, songs: List<SongModel>) {
+        val deleteIds = songIds.filter { id ->
+            songs.none { it.songId == id }
+        }
+
+        favoriteSongRepository.update(deleteIds)
+    }
+}

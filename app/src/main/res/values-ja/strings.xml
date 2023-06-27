@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">ThinMP</string>
+
+    <string name="library">ライブラリ</string>
+    <string name="artist">アーティスト</string>
+    <string name="artists">アーティスト</string>
+    <string name="album">アルバム</string>
+    <string name="albums">アルバム</string>
+    <string name="songs">曲</string>
+    <string name="favorite_artists">お気に入りアーティスト</string>
+    <string name="favorite_songs">お気に入り曲</string>
+    <string name="playlists">プレイリスト</string>
+    <string name="playlist">プレイリスト</string>
+    <string name="recently_added">最近追加した項目</string>
+    <string name="shortcut">ショートカット</string>
+
+    <string name="edit">編集</string>
+    <string name="done">完了</string>
+    <string name="cancel">キャンセル</string>
+    <string name="add_favorite">お気に入りに追加</string>
+    <string name="remove_favorite">お気に入りから削除</string>
+    <string name="playlist_name">プレイリスト名を入力</string>
+    <string name="add_playlist">プレイリストに追加</string>
+    <string name="create_playlist">プレイリストを作成</string>
+    <string name="remove_playlist">プレイリストを削除</string>
+    <string name="add_shortcut">ショートカットに追加</string>
+    <string name="remove_shortcut">ショートカットから削除</string>
+
+    <string name="permission_audio_denied">音楽ファイルへのアクセスを許可すると曲の再生ができます。</string>
+    <string name="permission_notifications_denied">通知を許可するとロック画面にメディアプレイヤーが表示されます。</string>
+    <string name="permission_request">アクセスを許可する</string>
+</resources>
