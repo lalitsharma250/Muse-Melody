@@ -3,6 +3,7 @@ Muse Melody is a music player for Android.
 <br>
 
 Features implemented are :
+
 Device Music Play:
 To play music on your device, you can use various music streaming services or media players available. 
 
